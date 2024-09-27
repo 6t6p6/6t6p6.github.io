@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "devs": "nodemon app.js", // For local development
-    "client": "npm run build --prefix client", // Build the client app
-    "start": "concurrently \"node app.js\" \"npm run build --prefix client\"" // Correctly run both server and client
+    "devs": "nodemon app.js", 
+    "client": "npm run build --prefix client", 
+    "start": "concurrently \"node app.js\" \"npm run build --prefix client\"" 
   },
   "dependencies": {
     "cors": "^2.8.5",
