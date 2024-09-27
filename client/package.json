@@ -6,8 +6,7 @@
   "scripts": {
     "devs": "nodemon --env-file=.env app.js",
     "client": "npm start --prefix client",
-    "start": "concurrently \"node --env-file=.env app.js\" \"npm run client\"",
-    "generate-api-spec": "node swagger.js"
+    "start": "concurrently \"node app.js\" \"npm run client\"",
   },
   "keywords": [],
   "author": "",
