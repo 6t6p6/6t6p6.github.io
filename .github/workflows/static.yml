@@ -37,6 +37,7 @@ jobs:
           KEY: ${{ secrets.REACT_APP_API_KEY }}
           URL: ${{ secrets.REACT_URL }}
           # Add any other environment variables here
+          run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
