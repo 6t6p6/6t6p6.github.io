@@ -46,7 +46,7 @@ jobs:
         run: npm install -g concurrently
 
       - name: run js
-        run: npm start --prefix client
+        run: npm start 
 
       - name: Deploy to GitHub Pages
         id: deployment
