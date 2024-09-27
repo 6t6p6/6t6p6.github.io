@@ -1,8 +1,9 @@
-name: Deploy static content to Pages
+name: Deploy JS App to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -24,29 +25,30 @@ jobs:
       KEY: ${{ secrets.REACT_APP_API_KEY }}
       URL: ${{ secrets.REACT_URL }}
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # or your preferred Node.js version
+          node-version: '16'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm ci
+
+      - name: Install `concurrently`
+        run: npm install -g concurrently
+
+      - name: Build client app
+        run: npm run build --prefix client  # Adjust path to the client directory
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './client'  # Adjust this to your build output directory
-          
-      - name: Install `concurrently`
-        run: npm install -g concurrently
-
-      - name: run js
-        run: npm start 
+          path: './client/build'  # Adjust path if necessary
 
       - name: Deploy to GitHub Pages
         id: deployment
