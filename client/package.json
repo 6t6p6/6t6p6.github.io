@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "devs": "nodemon --env-file=.env app.js",
-    "client": "npm start --prefix client",
-    "start": "concurrently \"node app.js\" \"npm run client\"",
+    "devs": "nodemon app.js", // Development with nodemon
+    "client": "npm run build --prefix client", // Builds the client app (like React)
+    "start": "concurrently \"node app.js\" \"npm run client\"" // Run server and client
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.0",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "dotenv": "^16.0.3", // Add dotenv to manage .env files
+    "concurrently": "^7.0.0" // Ensure concurrently is installed
   }
 }
