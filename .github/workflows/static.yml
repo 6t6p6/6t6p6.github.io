@@ -40,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './client'  # Adjust this to your build output directory
+          path: '../'  # Adjust this to your build output directory
 
       - name: run js
         run: npm start --prefix client
