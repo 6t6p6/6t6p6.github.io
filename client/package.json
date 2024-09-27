@@ -4,10 +4,13 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "devs": "nodemon app.js", 
-    "client": "npm run build --prefix client", 
-    "start": "concurrently \"node app.js\" \"npm run build --prefix client\"" 
+    "devs": "nodemon app.js",
+    "client": "npm run build --prefix client",
+    "start": "concurrently \"node app.js\" \"npm run build --prefix client\""
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.0",
