@@ -4,17 +4,15 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "devs": "nodemon --env-file=.env app.js",
-    "client": "npm start --prefix client",
-    "start": "concurrently \"node --env-file=.env app.js\" \"npm run client\"",
-    "generate-api-spec": "node swagger.js"
+    "devs": "nodemon app.js", // For local development
+    "client": "npm run build --prefix client", // Build the client app
+    "start": "concurrently \"node app.js\" \"npm run build --prefix client\"" // Correctly run both server and client
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.0",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "dotenv": "^16.0.3",
+    "concurrently": "^7.0.0"
   }
 }
